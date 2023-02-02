@@ -12,6 +12,9 @@ public abstract class Avion implements Vehicule{
     }
 
     public void afficherCaracteristiques(){
-
+        System.out.println("Caractéristiques");
+        System.out.println("Nombre de passager maximal         : " + passagerMax);
+        System.out.println("Vitesse de croisière maximale      : " + vitesseMaxCroisiere);
+        System.out.println("Distance franchissable             : " + distanceFranchissable);
     }
 }

@@ -8,4 +8,10 @@ public abstract class Motoneige implements Vehicule{
         this.longueurChenille = longueurChenille;
         this.PDSF = PDSF;
     }
+
+    public void afficherCaracteristiques(){
+        System.out.println("Caractéristiques");
+        System.out.println("Longueur de la chenille                        : " + longueurChenille);
+        System.out.println("Prix de détail suggéré par le fabricant        : " + PDSF);
+    }
 }
