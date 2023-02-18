@@ -17,9 +17,9 @@ public class Main {
 
         fabrique = new FabriqueBombardier();
         mesVehicules.add(fabrique.createAvion("CRJ1000"));
-        mesVehicules.add(fabrique.createAvion("GLOBAL8000"));
-        mesVehicules.add(fabrique.createMotoneige("SKIDOO_EXPEDITION_SPORT"));
-        mesVehicules.add(fabrique.createMotoneige("SKIDOO_RENEGADE"));
+        mesVehicules.add(fabrique.createAvion("Global8000"));
+        mesVehicules.add(fabrique.createMotoneige("SkiDooExpeditionSport"));
+        mesVehicules.add(fabrique.createMotoneige("SkiDooRenegade"));
 
         for(Vehicule vehicule : mesVehicules){
             vehicule.afficherCaracteristiques();

@@ -8,19 +8,23 @@ import vehicule.bombardier.motoneige.SkiDooRenegade;
 public class FabriqueBombardier implements FabriqueVehicule{
     @Override
     public Motoneige createMotoneige(String modele) {
-        switch (modele.toUpperCase()){
-            case "SKIDOO_EXPEDITION_SPORT": return new SkiDooExpeditionSport();
-            case "SKIDOO_RENEGADE": return new SkiDooRenegade();
+        try{
+            Class<Motoneige> classMotoneige = (Class<Motoneige>) Class.forName("vehicule.bombardier.motoneige." + modele);
+            return classMotoneige.getDeclaredConstructor().newInstance();
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     @Override
     public Avion createAvion(String modele) {
-        switch (modele.toUpperCase()){
-            case "CRJ1000": return new CRJ1000();
-            case "GLOBAL8000":return new Global8000();
+        try{
+            Class<Avion> classAvion = (Class<Avion>) Class.forName("vehicule.bombardier.avion." + modele);
+            return classAvion.getDeclaredConstructor().newInstance();
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
-        return null;
     }
 }

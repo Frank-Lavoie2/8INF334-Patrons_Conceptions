@@ -9,10 +9,12 @@ public class FabriqueAirbus implements FabriqueVehicule{
     }
 
     public Avion createAvion(String modele){
-        switch(modele.toUpperCase()){
-            case "A380": return new A380();
-            case "A220_300":return new A220_300();
-            default: return null;
+        try{
+            Class<Avion> classAvion = (Class<Avion>) Class.forName("vehicule.airbus.avion." + modele);
+            return classAvion.getDeclaredConstructor().newInstance();
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
     }
 }
